@@ -23,6 +23,7 @@ if platform?('windows')
         source node['ms_dotnet45']['http_url']
         installer_type :custom
         options '/quiet /norestart'
+        success_codes [0, 3010]
         timeout node['ms_dotnet45']['timeout']
         action :install
       end
